@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Week2.MainPage"
+    xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+    ios:Page.UseSafeArea="True"
+    Shell.NavBarIsVisible="False">
+
+    <Grid
+        RowDefinitions="Auto,*"
+        Margin="15,0"
+        Padding="0">
+        <Grid
+            Grid.Row="0"
+            ColumnDefinitions="*,*,*"
+            Padding="10">
+            <Border
+                x:Name="icHambuger"
+                Grid.Column="0"
+                HorizontalOptions="Start"
+                Background="{StaticResource Gray100Brush}"
+                WidthRequest="45"
+                HeightRequest="45"
+                StrokeThickness="0"
+                VerticalOptions="Center"
+                Padding="12"
+                StrokeShape="Ellipse">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="HambugerTapped" />
+                </Border.GestureRecognizers>
+                <Image
+                    Source="humberger_menu.png"
+                    x:Name="imgHambuger"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center" />
+            </Border>
+            <Image
+                Grid.Column="1"
+                WidthRequest="55"
+                HeightRequest="55"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Aspect="AspectFit"
+                Source="logo.png" />
+            <Border
+                Grid.Column="2"
+                HorizontalOptions="End"
+                Padding="12"
+                Background="{StaticResource Gray100Brush}"
+                WidthRequest="45"
+                HeightRequest="45"
+                StrokeThickness="0"
+                VerticalOptions="Center"
+                StrokeShape="Ellipse">
+                <Image
+                    Source="shop_bag.png"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center" />
+            </Border>
+        </Grid>
+        <ScrollView
+            Grid.Row="1"
+            BackgroundColor="Yellow"
+            Padding="0"
+            Margin="0"
+            VerticalOptions="FillAndExpand">
+            <StackLayout>
+                <Grid>
+                    <Border
+                        Background="{StaticResource Gray100Brush}"
+                        HeightRequest="50"
+                        StrokeThickness="0"
+                        HorizontalOptions="FillAndExpand"
+                        Padding="20,0,0,0"
+                        Margin="0,20,0,0">
+                        <Border.StrokeShape>
+                            <RoundRectangle
+                                CornerRadius="25" />
+                        </Border.StrokeShape>
+                        <Grid
+                            ColumnDefinitions="Auto,*"
+                            ColumnSpacing="20">
+                            <Image
+                                Grid.Column="0"
+                                Source="search.png" />
+                            <Entry
+                                Grid.Column="1"
+                                Placeholder="Search"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="Center"
+                                TextColor="{StaticResource Primary}" />
+                        </Grid>
+                    </Border>
+                    <Border
+                        Background="{StaticResource PrimaryBrush}"
+                        Stroke="{StaticResource TertiaryBrush}"
+                        HeightRequest="60"
+                        WidthRequest="60"
+                        StrokeThickness="2"
+                        HorizontalOptions="End"
+                        Padding="15"
+                        Margin="0,20,0,0"
+                        StrokeShape="Ellipse">
+                        <Image
+                            Source="filter.png" />
+                    </Border>
+                </Grid>
+
+            </StackLayout>
+
+        </ScrollView>
+    </Grid>
+</ContentPage>
+
