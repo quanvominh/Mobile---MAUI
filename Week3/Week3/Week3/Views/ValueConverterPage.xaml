@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Week3.Views.ValueConverterPage"
+             xmlns:converter="clr-namespace:Week3.Converters"
+             Title="ValueConverterPage">
+    <ContentPage.Resources>
+        <converter:FloatToIntConverter x:Key="floatToInt" />
+        <converter:BoolToObjectConverter x:Key="boolToObject" x:TypeArguments="Style">
+            <converter:BoolToObjectConverter.TrueObject>
+                <Style TargetType="Label">
+                    <Setter Property="Text" Value="Indubitably!" />
+                    <Setter Property="FontAttributes" Value="Italic, Bold" />
+                    <Setter Property="TextColor" Value="Green" />
+                </Style>
+            </converter:BoolToObjectConverter.TrueObject>
+
+            <converter:BoolToObjectConverter.FalseObject>
+                <Style TargetType="Label">
+                    <Setter Property="Text" Value="Maybe later" />
+                    <Setter Property="FontAttributes" Value="None" />
+                    <Setter Property="TextColor" Value="Red" />
+                </Style>
+            </converter:BoolToObjectConverter.FalseObject>
+        </converter:BoolToObjectConverter>
+    </ContentPage.Resources>
+    <VerticalStackLayout>
+        <StackLayout Orientation="Vertical"
+                     VerticalOptions="Center">
+            <Label Text="Learn more?" />
+            <Label Text="{Binding Data, Converter={StaticResource floatToInt}}"
+                   FontSize="25"
+                   HorizontalOptions="CenterAndExpand"/>
+            <Switch x:Name="switch3"/>
+            <Label FontSize="18"
+                   VerticalOptions="Center"
+                   Style="{Binding Source={x:Reference switch3}, Path=IsToggled,
+                                   Converter={StaticResource boolToObject}}"/>
+
+    </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>
+

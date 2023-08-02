@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="{Binding Title}"
+             xmlns:view="clr-namespace:Week3.Views"
+             xmlns:prism="http://prismlibrary.com"
+             x:Class="Week3.Views.MainPage">
+
+   <TableView Intent="Menu">
+        <TableRoot>
+            <TableSection Title="Styles">
+                <TextCell Text="Style classes"
+                          Detail="Style classes enable multiple styles to be applied to a control, without resorting to style inheritance."
+                          Command="{Binding DetailCommand}" 
+                          CommandParameter="{x:Type view:StyleClassesPage}" />
+                
+            </TableSection>
+            <TableSection Title="Basic Bindings">
+                <TextCell Text="Basic Code Binding"
+                          Detail="Define a data-binding in code"
+                          Command="{Binding DetailCommand}" 
+                          CommandParameter="{x:Type view:BasicBindingPage}" />
+                <TextCell Text="Binding Mode"
+                          Detail="Use a ViewModel to binding data"
+                          Command="{Binding DetailCommand}" 
+                          CommandParameter="{x:Type view:BindingModePage}" />
+                
+            </TableSection>
+            <TableSection Title="Value Converter">
+                  <TextCell Text="Converter"
+                            Detail="Define a data-binding in code"
+                            Command="{Binding DetailCommand}" 
+                            CommandParameter="{x:Type view:ValueConverterPage}" />
+                
+            </TableSection>
+            <TableSection Title="Starbuck Assignment">
+                  <TextCell Text="Week 3"
+                            Detail="Make CollectionView and Data binding"
+                            Command="{Binding DetailCommand}" 
+                            CommandParameter="{x:Type view:AssignmentWeek2Page}" />
+                
+            </TableSection>
+        </TableRoot>
+    </TableView>  
+
+</ContentPage>
+
