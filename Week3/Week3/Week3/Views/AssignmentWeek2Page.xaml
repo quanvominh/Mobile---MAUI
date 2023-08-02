@@ -1,42 +1,66 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Week3.Views.AssignmentWeek2Page"
-             Title="AssignmentWeek2Page"
-             xmlns:converter="clr-namespace:Week3.Converters"
-             x:Name="HomeView">
-    <VerticalStackLayout>
-        <StackLayout Orientation="Horizontal" 
-                      HorizontalOptions="FillAndExpand"
-                      VerticalOptions="Start"
-                      Margin="20,20,20,0">
-            <!--TODO: Make Header for collectionview-->
-        </StackLayout>
-        <CollectionView ItemsSource="{Binding Products}"
-                        SelectionMode="None"
-                        VerticalOptions="StartAndExpand"
-                        Margin="0,0,0,0">
-            <CollectionView.ItemsLayout>
-                <GridItemsLayout Orientation="Horizontal" />
-            </CollectionView.ItemsLayout>
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <VerticalStackLayout>
-                        <Border Padding="0"
-                                Margin="15,10,5,5"
-                                WidthRequest="240"
-                                BackgroundColor="{StaticResource Tertiary}"
-                                Stroke="Gray"
-                                StrokeThickness="0"
-                                StrokeShape="RoundRectangle 15">
-                            <!--Make Card view-->
-                        </Border>
+						 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+						 x:Class="Week3.Views.AssignmentWeek2Page"
+						 Title="AssignmentWeek2Page"
+						 xmlns:converter="clr-namespace:Week3.Converters"
+						 x:Name="HomeView">
+		<VerticalStackLayout>
+				<StackLayout Orientation="Horizontal" 
+											HorizontalOptions="FillAndExpand"
+											VerticalOptions="Start"
+											Margin="20,20,20,0">
+						<Label Text="Popular"
+										HorizontalOptions="StartAndExpand"
+										FontFamily="RalewayMedium"
+										FontSize="22"
+										TextColor="Black"/>
+						<Label Text="See All"
+										HorizontalOptions="End"
+										FontFamily="RalewayMedium"
+										FontSize="22"
+										TextColor="{StaticResource Primary}"/>
+				</StackLayout>
+				<Grid VerticalOptions="Fill">
+						<CollectionView ItemsSource="{Binding Products}"
+														SelectionMode="None"
+														BackgroundColor="Yellow"
+														HeightRequest="400"
+														Margin="0,0,0,0">
+								<CollectionView.ItemsLayout>
+										<GridItemsLayout Orientation="Horizontal" />
+								</CollectionView.ItemsLayout>
+								<CollectionView.ItemTemplate>
+										<DataTemplate>
+												<VerticalStackLayout>
+														<Border Padding="0"
+																		Margin="15,10,5,5"
+																		WidthRequest="240"
+																		BackgroundColor="{StaticResource Tertiary}"
+																		Stroke="Gray"
+																		StrokeThickness="0"
+																		StrokeShape="RoundRectangle 15">
+																<!-- TODO: Make Card view-->
+														</Border>
 
-                    </VerticalStackLayout>
+												</VerticalStackLayout>
 
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-    </VerticalStackLayout>
+										</DataTemplate>
+								</CollectionView.ItemTemplate>
+						</CollectionView>
+
+				</Grid>
+				<HorizontalStackLayout  Spacing="10"
+																			 RadioButtonGroup.GroupName="CoffeCategories"
+																			 BindableLayout.ItemsSource="{StaticResource CategoriesArray}">
+						<BindableLayout.ItemTemplate>
+								<DataTemplate>
+										 <RadioButton x:Name="RadioCategory" Content="{Binding .}" Value="{Binding .}">
+													<!--TODO: using ControlTemplate to render radio list-->
+													<!--Refer to https://learn.microsoft.com/en-us/dotnet/maui/user-interface/controls/radiobutton-->
+										 </RadioButton>
+								</DataTemplate>
+						</BindableLayout.ItemTemplate>
+				</HorizontalStackLayout>
+		</VerticalStackLayout>
 </ContentPage>
-

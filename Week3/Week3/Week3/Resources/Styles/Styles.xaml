@@ -3,6 +3,14 @@
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+  
+    <x:Array Type="{x:Type x:String}" x:Key="CategoriesArray">
+        <x:String>All</x:String>
+        <x:String>Coffee</x:String>
+        <x:String>Tea</x:String>
+        <x:String>Drink</x:String>
+        <x:String>Food</x:String>
+    </x:Array>
 
   <Style TargetType="ActivityIndicator">
     <Setter Property="Color" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
