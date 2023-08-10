@@ -44,14 +44,6 @@ namespace PrismStarbucksApp.ViewModels
         public override void Initialize(INavigationParameters parameters)
         {
             CategorySelectedValue = "All";
-            // load from local DB - currently we are using ImageSource locally -- show empty
-            //var data = SqLiteService.GetList<Product>(prod => prod.ProductId != -1);
-            //if (data.Count() == 0)
-            //{
-            //    var prods = _productService.GetProducts();
-            //    var res = SqLiteService.InsertAll(prods);
-            //    data = SqLiteService.GetList<Product>(prod => prod.ProductId != -1);
-            //}
             Products = new ObservableCollection<Product>(_productService.GetProducts());
         }
 

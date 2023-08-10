@@ -28,6 +28,15 @@
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
 	  <CreatePackage>false</CreatePackage>
 	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-ios|AnyCPU'">
+	  <CreatePackage>false</CreatePackage>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-ios|AnyCPU'">
+	  <CreatePackage>false</CreatePackage>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-ios|AnyCPU'">
+	  <CreatePackage>false</CreatePackage>
+	</PropertyGroup>
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#FFFFFF" />
@@ -41,52 +50,16 @@
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Prism.DryIoc.Maui" Version="8.1.191-beta" />
+		<PackageReference Include="Prism.DryIoc.Maui" Version="8.1.273-pre" />
 		<PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
 		<PackageReference Include="SQLiteNetExtensions" Version="2.1.0" />
     <!--<PackageReference Include="SQLitePCLRaw.provider.dynamic_cdecl" Version="2.1.2" />
     <PackageReference Include="SQLitePCLRaw.core" Version="2.1.2" />-->
 
-    <PackageReference Include="SQLitePCLRaw.core" Version="2.1.0-pre20220207221914" />
-    <PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.0-pre20220207221914" />
-    <PackageReference Include="SQLitePCLRaw.provider.dynamic_cdecl" Version="2.1.0-pre20220207221914" />
-    <PackageReference Include="SQLitePCLRaw.provider.sqlite3" Version="2.1.0-pre20220207221914" />
-	</ItemGroup>
-	<ItemGroup>
-	  <None Remove="Views\Commons\" />
-	  <None Remove="Controls\" />
-	  <None Remove="Resources\Images\add.png" />
-	  <None Remove="Resources\Images\back_arrow.png" />
-	  <None Remove="Resources\Images\chocolate_frappuccino.png" />
-	  <None Remove="Resources\Images\dotnet_bot.svg" />
-	  <None Remove="Resources\Images\fav.png" />
-	  <None Remove="Resources\Images\filter.png" />
-	  <None Remove="Resources\Images\grande.png" />
-	  <None Remove="Resources\Images\home.png" />
-	  <None Remove="Resources\Images\humberger_menu.png" />
-	  <None Remove="Resources\Images\humberger.svg" />
-	  <None Remove="Resources\Images\logo.png" />
-	  <None Remove="Resources\Images\love_default.png" />
-	  <None Remove="Resources\Images\love_filled.png" />
-	  <None Remove="Resources\Images\notification.png" />
-	  <None Remove="Resources\Images\search.png" />
-	  <None Remove="Resources\Images\shadow_1.png" />
-	  <None Remove="Resources\Images\shop_bag.png" />
-	  <None Remove="Resources\Images\star.png" />
-	  <None Remove="Resources\Images\substract.png" />
-	  <None Remove="Resources\Images\tall.png" />
-	  <None Remove="Resources\Images\tea_frappuccino.png" />
-	  <None Remove="Resources\Images\venti.png" />
-	  <None Remove="Resources\Images\wallet.png" />
-	  <None Remove="ViewModels\Commons\" />
-	  <None Remove="Models\" />
-	  <None Remove="Services\" />
-	  <None Remove="Interfaces\" />
-	  <None Remove="Utils\" />
-	  <None Remove="Resources\Fonts\Poppins-Regular.ttf" />
-	  <None Remove="Resources\Fonts\ProximaNova-Regular.otf" />
-	  <None Remove="Resources\Fonts\Raleway-Medium.ttf" />
-	  <None Remove="Resources\Fonts\Raleway-Regular.ttf" />
+    <PackageReference Include="SQLitePCLRaw.core" Version="2.1.5" />
+    <PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.5" />
+    <PackageReference Include="SQLitePCLRaw.provider.dynamic_cdecl" Version="2.1.5" />
+    <PackageReference Include="SQLitePCLRaw.provider.sqlite3" Version="2.1.5" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Views\Commons\" />
@@ -156,30 +129,5 @@
 	  <BundleResource Include="Resources\Fonts\ProximaNova-Regular.otf" />
 	  <BundleResource Include="Resources\Fonts\Raleway-Medium.ttf" />
 	  <BundleResource Include="Resources\Fonts\Raleway-Regular.ttf" />
-	</ItemGroup>
-	<ItemGroup>
-	  <MauiImage Remove="Resources\Images\add.png" />
-	  <MauiImage Remove="Resources\Images\wallet.png" />
-	  <MauiImage Remove="Resources\Images\tall.png" />
-	  <MauiImage Remove="Resources\Images\tea_frappuccino.png" />
-	  <MauiImage Remove="Resources\Images\dotnet_bot.svg" />
-	  <MauiImage Remove="Resources\Images\back_arrow.png" />
-	  <MauiImage Remove="Resources\Images\home.png" />
-	  <MauiImage Remove="Resources\Images\shadow_1.png" />
-	  <MauiImage Remove="Resources\Images\love_default.png" />
-	  <MauiImage Remove="Resources\Images\search.png" />
-	  <MauiImage Remove="Resources\Images\substract.png" />
-	  <MauiImage Remove="Resources\Images\love_filled.png" />
-	  <MauiImage Remove="Resources\Images\humberger.svg" />
-	  <MauiImage Remove="Resources\Images\logo.png" />
-	  <MauiImage Remove="Resources\Images\filter.png" />
-	  <MauiImage Remove="Resources\Images\humberger_menu.png" />
-	  <MauiImage Remove="Resources\Images\venti.png" />
-	  <MauiImage Remove="Resources\Images\star.png" />
-	  <MauiImage Remove="Resources\Images\grande.png" />
-	  <MauiImage Remove="Resources\Images\chocolate_frappuccino.png" />
-	  <MauiImage Remove="Resources\Images\fav.png" />
-	  <MauiImage Remove="Resources\Images\shop_bag.png" />
-	  <MauiImage Remove="Resources\Images\notification.png" />
 	</ItemGroup>
 </Project>

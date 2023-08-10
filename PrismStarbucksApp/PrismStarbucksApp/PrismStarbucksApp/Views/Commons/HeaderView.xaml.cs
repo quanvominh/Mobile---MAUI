@@ -56,6 +56,7 @@ public partial class HeaderView : ContentView
 
     private void HambugerTapped(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {
+        HambugerCommand?.Execute(null);
     }
 
     private void HambugerTapped(System.Object sender, System.EventArgs e)

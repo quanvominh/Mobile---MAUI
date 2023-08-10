@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <!-- Base theme applied no matter what API -->
+  <style name="CustomTheme" parent="MainTheme">
+    <!--If you are using revision 22.1 please use just windowNoTitle. Without android:-->
+    <item name="windowNoTitle">true</item>
+    <!--We will be using the toolbar so no need to show ActionBar-->
+    <item name="windowActionBar">false</item>
+  </style>
+</resources>
