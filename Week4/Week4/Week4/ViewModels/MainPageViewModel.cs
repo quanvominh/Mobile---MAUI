@@ -8,10 +8,9 @@ namespace Week4.ViewModels;
 
 public class MainPageViewModel : BindableBase
 {
-    private ISemanticScreenReader _screenReader { get; }
-    public MainPageViewModel(ISemanticScreenReader screenReader)
+    public MainPageViewModel()
     {
-        _screenReader = screenReader;
+        TestCommand = new Command(OnTestCommandExecuted);
     }
 
     private INavigationService _navigationService { get; }
@@ -38,9 +37,8 @@ public class MainPageViewModel : BindableBase
         set => SetProperty(ref _text, value);
     }
 
-    public MainPageViewModel(HttpRequest httpRequest, SqLiteService sqLiteService, ISemanticScreenReader screenReader)
+    public MainPageViewModel(HttpRequest httpRequest, SqLiteService sqLiteService)
     {
-        _screenReader = screenReader;
         _httpRequest = httpRequest;
         _sqLiteService = sqLiteService;
 
@@ -105,6 +103,12 @@ public class MainPageViewModel : BindableBase
         Cats = new ObservableCollection<Cat>();
         Text = "";
         IsLoading = false;
+    }
+
+    public ICommand TestCommand { get; }
+    private void OnTestCommandExecuted()
+    {
+        Text = "Testing...";
     }
 }
 
